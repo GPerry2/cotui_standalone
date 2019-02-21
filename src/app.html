@@ -10,7 +10,8 @@ See examples below in the boilerplate code
     <!-- endinject -->
     <!-- place your application stylesheet references here: -->
     <link rel="stylesheet" type="text/css" href="<!-- @echo SRC_PATH -->/styles/main.css">
-    <link href="/node_modules/COT_UI/dist/cotui.min.css" rel="stylesheet">
+    <link href="/node_modules/cotui/dist/cotui.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/node_modules/font-awesome/css/font-awesome.css">
   <!-- endbuild -->
   <!--@exec startBuildTagWithCacheBuster('styles/core_print.css', 'media="print"')-->
     <!-- core_print:css -->
@@ -29,7 +30,7 @@ See examples below in the boilerplate code
     <!-- endinject -->
     <!-- place your application script references here: -->
     <script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/main.js"></script>
-    <script type="text/javascript" src="/node_modules/cotui/dist/cotui.min.js"></script>
+    <script type="text/javascript" src="/node_modules/cotui/dist/cotui.js"></script>
   <!-- endbuild -->
   <!--@if ENV!='prod'-->
   <script type="text/javascript">

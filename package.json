@@ -38,7 +38,8 @@
   },
   "dependencies": {
     "core": "git+https://github.com/CityofToronto/corejs.git#9.3.1",
-    "cotui":"git+https://github.com/CityofToronto/COT_UI.git"
+    "cotui":"git+https://github.com/CityofToronto/COT_UI.git",
+    "font-awesome": "^4.7.0"
   },
   "coreConfig": {
     "isEmbedded": false,
