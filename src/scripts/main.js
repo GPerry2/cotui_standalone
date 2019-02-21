@@ -5,7 +5,7 @@
 
 $(function () {
   if (window['cot_app']) { //the code in this 'if' block should be deleted for embedded apps
-    const app = new cot_app("cotui_standalone",{
+    const app = new cot_app("cotui_standalone", {
       hasContentTop: false,
       hasContentBottom: false,
       hasContentRight: false,
@@ -31,17 +31,32 @@ $(function () {
         "title": "",
         "rows": [
           {
-            fields:[
+            "fields": [
               {
-                "id":"firstName",
-                "title":"First Name",
-                "type":"text",
-                "required":true
-              },
+                "id": "firstName",
+                "title": "First Name",
+                "type": "text",
+                "required": true
+              }
+            ]
+          },
+          {
+            "fields": [
               {
-                "id":"test_area",
-                "type":"html",
-                "html":`<div id="typeahead_test_area"></div>`
+                "id": "test_area",
+                "type": "html",
+                "html": `<div id="typeahead_test_area"></div>`
+              }
+            ]
+          },
+          {
+            "fields":[
+              {
+                "id": "saveReport",
+                "title": "Save",
+                "type": "html",
+                "html": "<button  class=\"btn btn-success btn-save\" id=\"save\"><span class=\"glyphicon glyphicon-floppy-disk\" aria-hidden=\"true\"></span> " + "Save" + "</button>",
+                "class": "pull-left"
               }
             ]
           }
@@ -53,28 +68,34 @@ $(function () {
     }
   });
 
-  f.render({"target": container });
+  f.render({"target": container});
 
 
   var ui = new COTUI();
-  var autosuggestVUE = ui.Autosuggest({target:'#test_areaElement',initCustomElements:true});
+  var autosuggestVUE = ui.Autosuggest({target: '#test_areaElement', initCustomElements: true});
   var autosuggest = ui.Autosuggest({
-    target:'#typeahead_test_area',
-    label:'Find Address or Intersection',
-    button:'Lookup',
-    icon:'glyphicon glyphicon-map-marker',
-    type:'api',
-    limit:10,
-    dataApi:{
-      value:'KEYSTRING',
-      text:'ADDRESS',
-      path:'result.rows',
-      url:'https://map.toronto.ca/cotgeocoder/rest/geocoder/suggest?f=json&addressOnly=0&retRowLimit=100&searchString={QUERY}',
-      includeAll:true
+    target: '#typeahead_test_area',
+    label: 'Find Address or Intersection',
+    button: 'Lookup',
+    icon: 'glyphicon glyphicon-map-marker',
+    type: 'api',
+    limit: 10,
+    dataApi: {
+      value: 'KEYSTRING',
+      text: 'ADDRESS',
+      path: 'result.rows',
+      url: 'https://map.toronto.ca/cotgeocoder/rest/geocoder/suggest?f=json&addressOnly=0&retRowLimit=100&searchString={QUERY}',
+      includeAll: true
     }
   });
 
-  autosuggest.results( function(evt){ console.log('Got Results', evt) });
-  autosuggest.selected( function(evt){ console.log('Selected Fired', evt) });
-  autosuggest.submit( function(evt){ console.log('Submit Fired',evt) });
+  autosuggest.results(function (evt) {
+    console.log('Got Results', evt)
+  });
+  autosuggest.selected(function (evt) {
+    console.log('Selected Fired', evt)
+  });
+  autosuggest.submit(function (evt) {
+    console.log('Submit Fired', evt)
+  });
 });
