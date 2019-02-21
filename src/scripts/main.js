@@ -64,7 +64,7 @@ $(function () {
       }
     ],
     success: function () {
-
+console.log("form submit success");
     }
   });
 
