@@ -41,10 +41,7 @@ $(function () {
               {
                 "id":"test_area",
                 "type":"html",
-                "html":`<div id="app">
-                        <h2>JS.App</h2>
-        <div id="js-app"></div>
-        <div id="js-app-json"></div></div>`
+                "html":`<div id="typeahead_test_area"></div>`
               }
             ]
           }
@@ -60,9 +57,9 @@ $(function () {
 
 
   var ui = new COTUI();
-  var autosuggestVUE = ui.Autosuggest({target:'#app',initCustomElements:true});
+  var autosuggestVUE = ui.Autosuggest({target:'#test_areaElement',initCustomElements:true});
   var autosuggest = ui.Autosuggest({
-    target:'#cotui_standalone_container',
+    target:'#typeahead_test_area',
     label:'Find Address or Intersection',
     button:'Lookup',
     icon:'glyphicon glyphicon-map-marker',
